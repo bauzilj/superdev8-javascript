@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/seletor-tag.css">
+</head>
+
+<body>
+    <p>Minecraft é um jogo eletrônico sandbox de sobrevivência de 2011 desenvolvido e publicado pela desenvolvedora
+        sueca Mojang Studios. Originalmente criado por Markus "Notch" Persson usando a linguagem de programação Java, a
+        primeira versão alfa pública foi lançada em 17 de maio de 2009. O jogo foi desenvolvido continuamente a partir
+        de então, recebendo um lançamento completo em 18 de novembro de 2011. Posteriormente, Persson deixou a Mojang e
+        cedeu o controle do desenvolvimento a Jens "Jeb" Bergensten. Nos anos desde o seu lançamento, o jogo foi portado
+        para diversas plataformas, incluindo smartphones, tablets e diversos consoles de jogos eletrônicos. Em 2014, a
+        Mojang e a propriedade intelectual de Minecraft foram compradas pela Microsoft por US$ 2.5 bilhões.</p>
+    <div>
+        <span>Tamanho da fonte</span>
+        <div>
+            <input type="radio" id="fonte-pequena-pequena" name="fonte" value="4">
+            <label for="fonte-pequena-pequena">PP</label>
+
+            <input type="radio" id="fonte-pequena" name="fonte" value="8">
+            <label for="fonte-pequena">Pequena</label>
+
+            <input type="radio" id="fonte-sei-la" name="fonte" value="12">
+            <label for="fonte-sei-la">Tamanho no meio</label>
+
+            <input type="radio" id="fonte-media" name="fonte" value="16">
+            <label for="fonte-media">Média</label>
+
+            <input type="radio" id="fonte-grande" name="fonte" value="24">
+            <label for="fonte-grande">Grande</label>
+
+            <input type="radio" id="fonte-grande-grande" name="fonte" value="32">
+            <label for="fonte-grande-grande">GG</label>
+        </div>
+    </div>
+
+    <div>
+        <label for="cor-texto">Cor de Texto</label>
+        <select id="cor-texto">
+            <option value="" disabled selected>Escolhe uma cor</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+        </select>
+    </div>
+    <div>
+        <label for="cor-fundo">Cor de Fundo</label>
+        <input type="color" id="cor-fundo">
+    </div>
+    <img id="imagem-mine">
+</body>
+
+<script src="assets/js/seletor-tag.js"></script>
+
+</html>

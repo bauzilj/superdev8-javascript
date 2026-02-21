@@ -1,20 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/seletor-class.css">
 </head>
+
 <body>
-    <div class=" caixa azul">Azul</div>
-    <div class=" caixa rosa">Azul</div>
-    <div class=" caixa preto">Azul</div>
-    <div class=" caixa verde">Azul</div>
+    <div class="caixa azul">Azul</div>
+    <div class="caixa rosa">Rosa</div>
+    <div class="caixa roxo">Roxo</div>
+    <div class="caixa preto">Preto</div>
 
-    <button id="alterar-vizibilidade-azul"> Ocultar botao azul</button>
-    
+    <div>
+        <button id="ocultar-azul">Ocultar azul</button>
+        <button id="mostrar-roxo">Mostrar roxo</button>
+        <button id="alterar-visibilidade-rosa">Alterar visibilidade rosa</button>
 
-    <script src="assets/js/seletor-class.js"></script>
+        <button id="aumentar-tamanho-preto">+</button>
+        <button id="diminuir-tamanho-preto">-</button>
+        <button id="deslocar-cima">↑</button>
+        <button id="deslocar-direita">→</button>
+        <button id="deslocar-baixo">↓</button>
+        <button id="deslocar-esquerda">←</button>
+    </div>
+    <div>
+        <label for="deslocamento">Distância</label>
+        <input type="text" id="deslocamento" value="10">
+    </div>
+        
+    <div class="margin-top">
+        <div class="caixa verde">Verde</div>
+    </div>
+    <!-- 
+        Aumentar o tamanho da caixa preta
+        Deslocar caixa verde de lugar para direita
+        Deslocar caixa verde de lugar para baixo
+        Adicionar evento de setinhas para movimetnar a caixa verde
+    -->
+    <script src="./assets/js/seletor-class.js"></script>
+    <script src="./assets/js/seletor-class-deslocar-verde.js"></script>
+
 </body>
+
 </html>
