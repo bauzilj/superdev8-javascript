@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Filmes</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 p-10">
+
+    <!-- CARD FORM -->
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-md">
+
+        <h2 class="text-2xl font-bold mb-6 text-center text-gray-700">
+            🎬 Cadastro de Filme
+        </h2>
+
+        <form class="space-y-4">
+
+            <div>
+                <label class="block text-sm font-medium text-gray-600" id="nome-filme">
+                    Nome do filme:
+                </label>
+                <input type="text" id="nome"
+                    class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-600" id="genero-filme">
+                    Gênero:
+                </label>
+                <input type="text" id="genero"
+                    class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-600" id="duracao-minutos">
+                    Duração em minutos:
+                </label>
+                <input type="number" id="duracao"
+                    class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-600" id="note"> 
+                    Nota dada ao filme (0 a 10):
+                </label>
+                <input type="number" id="nota" min="0" max="10"
+                    class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-600" id="filme-assistido">
+                    Assistido no cinema?
+                </label>
+
+                <select id="assistido"
+                    class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
+
+            <button type="button" id="botao-salvar"
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg transition">
+                Salvar
+            </button>
+
+        </form>
+    </div>
+
+
+    <!-- TABELA -->
+    <div class="max-w-5xl mx-auto mt-10">
+
+        <table class="w-full border border-gray-300 rounded-lg overflow-hidden bg-white shadow">
+
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="p-3 border">Código</th>
+                    <th class="p-3 border">Nome do filme</th>
+                    <th class="p-3 border">Gênero</th>
+                    <th class="p-3 border">Duração</th>
+                    <th class="p-3 border">Nota</th>
+                    <th class="p-3 border">Classificação</th>
+                    <th class="p-3 border">Assistido no cinema?</th>
+                </tr>
+            </thead>
+
+            <tbody id="filmes">
+               
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script src="./assets/js/cadastro-filmes.js"></script>
+
+</body>
+
+</html>

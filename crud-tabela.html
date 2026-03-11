@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD de Colaboradores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-gray-200 min-h-screen p-8">
+
+    <div class="max-w-5xl mx-auto bg-gray-800 shadow-lg rounded-xl p-6">
+
+        <h1 class="text-2xl font-bold mb-6 text-white">Cadastro de Colaborador</h1>
+
+        <!-- Formulário -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+
+            <div>
+                <label class="block text-sm font-semibold text-gray-300 mb-1">Nome</label>
+                <input id="campo-nome" type="text"
+                    class="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Digite o nome">
+            </div>
+
+            <div>
+                <label class="block text-sm font-semibold text-gray-300 mb-1">Cargo</label>
+                <select id="campo-cargo"
+                    class="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="" selected disabled>Selecione</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Pleno">Pleno</option>
+                    <option value="Senior">Senior</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-sm font-semibold text-gray-300 mb-1">Quantidade de Horas</label>
+                <input id="campo-horas" type="number"
+                    class="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Horas trabalhadas">
+            </div>
+
+        </div>
+
+        <div class="mb-6">
+            <button id="botao-salvar"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition">
+                Salvar
+            </button>
+        </div>
+
+        <!-- Tabela -->
+        <div class="overflow-x-auto">
+            <table class="min-w-full border border-gray-700 rounded-lg overflow-hidden">
+
+                <thead class="bg-gray-700 text-gray-200">
+                    <tr class="text-left">
+                        <th class="px-4 py-3 border-b border-gray-600">Código</th>
+                        <th class="px-4 py-3 border-b border-gray-600">Nome</th>
+                        <th class="px-4 py-3 border-b border-gray-600">Cargo</th>
+                        <th class="px-4 py-3 border-b border-gray-600">Horas</th>
+                        <th class="px-4 py-3 border-b border-gray-600">Salário Bruto</th>
+                        <th class="px-4 py-3 border-b border-gray-600">Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="colaboradores" class="bg-gray-800">
+                    <!-- Tabela inicia vazia -->
+                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                        <td class="px-4 py-3">1</td>
+                        <td class="px-4 py-3">João Silva</td>
+                        <td class="px-4 py-3">Pleno</td>
+                        <td class="px-4 py-3">160</td>
+                        <td class="px-4 py-3">R$ 8.000</td>
+                        <td class="px-4 py-3 flex gap-2">
+
+                            <button 
+                                class="botao-editar bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-3 py-1 rounded-md text-sm transition">
+                                Editar
+                            </button>
+
+                            <button
+                                class="botao-apagar bg-red-600 hover:bg-red-700 text-white font-semibold px-3 py-1 rounded-md text-sm transition">
+                                Excluir
+                            </button>
+
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+<script src="./assets/js/crud-tabela.js"></script>
+</body>
+
+</html>
