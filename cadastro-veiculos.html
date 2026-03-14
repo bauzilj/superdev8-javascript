@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Veículos</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-8">
+
+    <!-- Formulário -->
+    <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-2xl mb-10">
+
+        <h1 class="text-2xl font-bold text-gray-700 mb-6 text-center">
+            Cadastro de Veículos
+        </h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <div class="flex flex-col">
+                <label class="text-gray-600 mb-1" id="label-modelo">Modelo</label>
+                <input type="text" id="modelo"
+                    class="border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div class="flex flex-col">
+                <label class="text-gray-600 mb-1" id="label-marca">Marca</label>
+                <input type="text" id="marca"
+                    class="border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div class="flex flex-col">
+                <label class="text-gray-600 mb-1" id="label-ano">Ano</label>
+                <input type="number" id="ano"
+                    class="border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div class="flex flex-col">
+                <label class="text-gray-600 mb-1" id="label-valor">Valor do veículo</label>
+                <input type="number" id="valor-do-veiculo"
+                    class="border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div class="flex flex-col md:col-span-2">
+                <label class="text-gray-600 mb-1" id="label-qtd-porta">Quantidade de portas</label>
+                <input type="number" max="10" id="qtd-portas"
+                    class="border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+        </div>
+
+        <div class="mt-6 text-center">
+            <button id="botao-salvar"
+                class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                Salvar Veículo
+            </button>
+        </div>
+
+    </div>
+
+
+    <!-- Tabela -->
+    <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-4xl">
+
+        <h2 class="text-xl font-semibold text-gray-700 mb-4 text-center">
+            Veículos Cadastrados
+        </h2>
+
+        <div class="overflow-x-auto">
+
+            <table class="w-full border-collapse">
+
+                <thead class="bg-blue-600 text-white">
+                    <tr>
+                        <th class="p-3 text-left">Código</th>
+                        <th class="p-3 text-left">Modelo</th>
+                        <th class="p-3 text-left">Marca</th>
+                        <th class="p-3 text-left">Ano</th>
+                        <th class="p-3 text-left">Valor</th>
+                        <th class="p-3 text-left">Qtd Portas</th>
+                        <th class="p-3 text-left">Idade</th>
+                    </tr>
+                </thead>
+
+                <tbody class="text-gray-700" id="veiculos">
+
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="p-3">1</td>
+                        <td class="p-3">X6-2003</td>
+                        <td class="p-3">Ferrari</td>
+                        <td class="p-3">2003</td>
+                        <td class="p-3">R$ 230 768.00</td>
+                        <td class="p-3">4</td>
+                        <td class="p-3">23 anos</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+<script src="./assets/js/cadastro-veiculos.js"></script>
+</body>
+
+</html>
