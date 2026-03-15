@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de alunos</title>
+    <link rel="stylesheet" href="./assets/css/cadastro-aluno.css">
+</head>
+
+<body>
+    <div class="main">
+        <h1>Cadastro de alunos</h1>
+        <p id="alert"></p>
+        <div>
+            <label for="nome">Nome Aluno</label>
+            <input type="text" id="nome" name="nome">
+        </div>
+        <div>
+            <label for="nota-1">Nota 1</label>
+            <input type="text" id="nota-1" name="nota-1">
+        </div>
+        <div>
+            <label for="nota-2">Nota 2</label>
+            <input type="text" id="nota-2" name="nota-2">
+        </div>
+        <div>
+            <label for="nota-3">Nota 3</label>
+            <input type="text" id="nota-3" name="nota-3">
+        </div>
+        <div>
+            <button id="botao-add">Adicionar</button>
+        </div>
+    </div>
+    <div class="main-table">
+        <table border="1px solid black">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome do aluno</th>
+                    <th>Nota 1</th>
+                    <th>Nota 2</th>
+                    <th>Nota 3</th>
+                    <th>Média final</th>
+                    <th>Situação</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="alunos">
+                <!--Restante codigo no JavaScripts-->
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./assets/js/cadastro-aluno.js"></script>
+</body>
+
+</html>
