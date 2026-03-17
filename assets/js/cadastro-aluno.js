@@ -1,5 +1,6 @@
 let nextId = 1;
 let linhaEditando = "";
+
 const botaoAdicionar = document.getElementById("botao-add");
 botaoAdicionar.addEventListener("click", adicionar);
 
@@ -34,7 +35,7 @@ function adicionar() {
         linhaEditando.children[5].innerText = media.toFixed(2);
         linhaEditando.children[6].innerText = situacao;
 
-        linhaEditando = null;
+        linhaEditando = "";
 
     } else {
 

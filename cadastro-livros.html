@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de livros</title>
+    <link rel="stylesheet" href="./assets/css/cadastro-livros.css">
+</head>
+<body>
+    <div class="main-content">
+        <h1>Cadastro de livros</h1>
+        <p id="alert"></p>
+
+        <div>
+            <label for="titulo-livro">Título do livro</label>
+            <input type="text" id="titulo-livro" name="titulo-livro">
+        </div>
+
+        <div>
+            <label for="autor">Autor</label>
+            <input type="text" id="autor" name="autor">
+        </div>
+
+        <div>
+            <label for="quantidadePaginas">Quantidade de páginas</label>
+            <input type="text" id="quantidadePaginas" name="quantidadePaginas">
+        </div>
+
+        <div>
+            <label for="anoDePublicacao">Ano de publicação</label>
+            <input type="text" id="anoDePublicacao" name="anoDePublicacao">
+        </div>
+        <div>
+            <button id="botao-salvar">Salvar</button>
+        </div>
+    </div>
+    <div id="main-table">
+        <table border="1px solid black">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Quantidade de páginas</th>
+                    <th>Ano de publicação</th>
+                    <th>Classificação</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="livros">
+                <!--Restante codigo no javascript-->
+            </tbody>
+        </table>
+    </div>
+    <script src="./assets/js/cadastro-livros.js"></script>
+</body>
+</html>
