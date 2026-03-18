@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro pedidos</title>
+    <link rel="stylesheet" href="./assets/css/cadastro-pedidos.css">
+</head>
+<body>
+    <div class="main-content">
+        <h1>Cadastro pedidos</h1>
+        <p id="alert"></p>
+        <div>
+            <label for="nome-do-cliente">Nome do cliente</label>
+            <input type="text" id="nome-do-cliente" name="nome-do-cliente">
+        </div>
+        <div>
+            <label for="nome-do-lanche">Nome do lanche</label>
+            <input type="text" id="nome-do-lanche" name="nome-do-lanche">
+        </div>
+        <div>
+            <label for="quantidade">Quantidade</label>
+            <input type="text" id="quantidade" name="quantidade">
+        </div>
+        <div>
+            <label for="valor-unitario">Valor unitário</label>
+            <input type="text" id="valor-unitario" name="valor-unitario">
+        </div>
+        <div>
+            <button id="botao-salvar">Salvar</button>
+        </div>
+    </div>
+    <div class="main-table">
+        <table border="1px solid black">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome do cliente</th>
+                    <th>Nome do lanche</th>
+                    <th>Quantidade</th>
+                    <th>Valor unitário</th>
+                    <th>Valor total dos pedidos</th>
+                    <th>Açoes</th>
+                </tr>
+            </thead>
+            <tbody id="pedidos">
+                <!--Codigo no JavaScripts-->
+                
+            </tbody>
+
+        </table>
+    </div>
+    <script src="./assets/js/cadastro-pedidos.js"></script>
+</body>
+</html>

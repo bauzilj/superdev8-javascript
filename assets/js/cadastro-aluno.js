@@ -18,7 +18,7 @@ function adicionar() {
     let nota3 = parseFloat(campoNota3.value.trim());
 
     let media = (nota1 + nota2 + nota3) / 3;
-    let situacao = media >= 6 ? "Aprovado" : "Reprovado";
+    let situacao = media >= 7 ? "Aprovado" : "Reprovado";
 
     if (!nome || isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
         mensagemAlert.innerHTML = "Preencha todos os campos corretamente!!!";

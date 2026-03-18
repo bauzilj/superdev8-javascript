@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de filmes</title>
+    <link rel="stylesheet" href="./assets/css/cadastro-filmes2.css">
+</head>
+<body>
+    <div class="main-content">
+        <h1>Cadastro de filmes</h1>
+        <p id="mensagem-alert"></p>
+
+        <div>
+            <label for="nome-do-filme">Nome do filme</label>
+            <input type="text" id="nome-do-filme" name="nome-do-filme">
+        </div>
+
+        <div>
+            <label for="genero">Gênero</label>
+            <input type="text" id="genero" name="genero">
+        </div>
+        <div>
+            <label for="duracao-em-minutos">Duração em minutos</label>
+            <input type="text" id="duracao-em-minutos" name="duracao-em-minutos">
+        </div>
+        <div>
+            <label for="faixa-etaria">Faixa etária</label>
+            <input type="text" id="faixa-etaria" name="faixa-etaria">
+        </div>
+        <div>
+            <button id="botao-salvar">Salvar</button>
+        </div>
+    </div>
+
+    <div class="main-table">
+        <table border="1px solid black">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome do filme</th>
+                    <th>Gênero</th>
+                    <th>Duração</th>
+                    <th>Faixa etária</th>
+                    <th>Classificação de duração</th>
+                    <th>Açoes</th>
+                </tr>
+            </thead>
+            <tbody id="filmes">
+
+            </tbody>
+        </table>
+    </div>
+    <script src="./assets/js/cadastro-filmes2.js"></script>
+</body>
+</html>
