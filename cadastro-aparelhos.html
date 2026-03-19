@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro aparelhos</title>
+    <link rel="stylesheet" href="./assets/css/cadastro-aparelhos.css">
+</head>
+<body>
+    <div class="main-content">
+        <h1>Cadastro aparelhos</h1>
+        <p id="mensagem-alert"></p>
+
+        <div>
+            <label for="marca">Marca</label>
+            <input type="text" id="marca" name="marca">
+        </div>
+        <div>
+            <label for="modelo">Modelo</label>
+            <input type="text" id="modelo" name="modelo">
+        </div>
+        <div>
+            <label for="valor">Valor</label>
+            <input type="text" id="valor" name="valor">
+        </div>
+        <div>
+            <label for="quantidade-em-estoque">Quantidade em estoque</label>
+            <input type="text" id="quantidade-em-estoque" name="quantidade-em-estoque">
+        </div>
+        <div>
+            <button id="botao-salvar">Salvar</button>
+        </div>
+    </div>
+
+    <div class="main-table">
+        <table border="1px solid black">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Marca</th>
+                    <th>modelo</th>
+                    <th>Valor</th>
+                    <th>Quantidade em estoque</th>
+                    <th>Valor total em estoque</th>
+                    <th>Açoes</th>
+                </tr>
+            </thead>
+
+            <tbody id="aparelhos">
+              
+            </tbody>
+        </table>
+    </div>
+    <script src="./assets/js/cadastro-aparelhos.js"></script>
+</body>
+</html>

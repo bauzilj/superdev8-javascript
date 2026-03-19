@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar viagens</title>
+    <link rel="stylesheet" href="./assets/css/cadastrar-viagens.css">
+</head>
+<body>
+    <div class="main-content">
+        <h1>Cadastrar viagens</h1>
+        <p id="mensagem-alert"></p>
+        <div>
+            <label for="destino">Destino</label>
+            <input type="text" id="destino" name="destino">
+        </div>
+        <div>
+            <label for="distancia-em-kilometro">Distância em quilômetros</label>
+            <input type="text" id="distancia-em-kilometro" name="distancia-em-kilometro">
+        </div>
+        <div>
+            <label for="quantidade-de-passageiros">Quantidade de passageiros</label>
+            <input type="text" id="quantidade-de-passageiros" name="quantidade-de-passageiros">
+        </div>
+        <div>
+            <label for="valor-da-passagem">Valor da passagem</label>
+            <input type="text" id="valor-da-passagem" name="valor-da-passagem">
+        </div>
+        <div>
+            <button id="botao-salvar">Salvar</button>
+        </div>
+    </div>
+    <div class="main-table">
+        <table border="1px solid black">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Destino</th>
+                    <th>Distância em quilômetros</th>
+                    <th>Quantidade de passageiros</th>
+                    <th>Valor da passagem</th>
+                    <th>Valor total arrecadado</th>
+                    <th>Açoes</th>
+                </tr>
+            </thead>
+            <tbody id="viagens">
+               
+            </tbody>
+        </table>
+    </div>
+    <script src="./assets/js/cadastrar-vagens.js"></script>
+</body>
+</html>
