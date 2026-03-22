@@ -1,120 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sistema de Cadastro de Imóveis</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
+    <title>Sistema de Cadastro de Imóveis</title>
+    <link rel="stylesheet" href="./assets/css/cadastro-imoveis.css">
 
 </head>
 
-<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen p-10 text-gray-200">
+<body>
 
-<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10">
+    <div class="container">
 
-    <!-- FORM -->
-    <div class="bg-slate-800 border border-slate-700 p-8 rounded-2xl shadow-2xl">
 
-        <h1 class="text-3xl font-bold mb-6 text-blue-400">
-            🏠 Cadastro de Imóvel
-        </h1>
+        <div class="card">
 
-        <div class="space-y-5">
+            <h1>🏠 Cadastro de Imóvel</h1>
+            <p id="mensagem-alert"></p>
 
-            <div>
-                <label class="text-sm text-gray-400">Proprietário</label>
-                <input type="text" id="proprietario"
-                class="w-full mt-1 p-3 bg-slate-900 border border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+            <div class="form-group">
+                <label>Proprietário</label>
+                <input type="text" id="proprietario">
             </div>
 
-            <div>
-                <label class="text-sm text-gray-400">Localidade</label>
-                <input type="text" id="localidade"
-                class="w-full mt-1 p-3 bg-slate-900 border border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+            <div class="form-group">
+                <label>Localidade</label>
+                <input type="text" id="localidade">
             </div>
 
-            <div>
-                <label class="text-sm text-gray-400">Valor do imóvel</label>
-                <input type="text" id="valor-imovel"
-                class="w-full mt-1 p-3 bg-slate-900 border border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+            <div class="form-group">
+                <label>Valor do imóvel</label>
+                <input type="text" id="valor-imovel">
             </div>
 
-            <div>
-                <label class="text-sm text-gray-400">Área (m²)</label>
-                <input type="text" id="m2-imovel"
-                class="w-full mt-1 p-3 bg-slate-900 border border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+            <div class="form-group">
+                <label>Área (m²)</label>
+                <input type="text" id="m2-imovel">
             </div>
 
-            <div>
-                <label class="text-sm text-gray-400">Possui construção?</label>
-                <select id="construcao"
-                class="w-full mt-1 p-3 bg-slate-900 border border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+            <div class="form-group">
+                <label>Possui construção?</label>
+                <select id="construcao">
                     <option value="" disabled selected>Selecione</option>
                     <option value="Sim">Sim</option>
                     <option value="Não">Não</option>
                 </select>
             </div>
 
-            <button id="botao-salvar"
-            class="w-full bg-blue-600 hover:bg-blue-700 transition font-semibold py-3 rounded-lg shadow-lg">
-                Salvar Imóvel
-            </button>
+            <button id="botao-salvar">Salvar Imóvel</button>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>📊 Imóveis cadastrados</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Proprietário</th>
+                            <th>Localidade</th>
+                            <th>Valor</th>
+                            <th>Área (m²)</th>
+                            <th>Construção</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="imoveis"></tbody>
+
+                </table>
+            </div>
 
         </div>
 
     </div>
 
-
-    <!-- TABELA -->
-    <div class="bg-slate-800 border border-slate-700 p-8 rounded-2xl shadow-2xl">
-
-        <h2 class="text-2xl font-bold mb-6 text-blue-400">
-            📊 Imóveis cadastrados
-        </h2>
-
-        <div class="overflow-x-auto">
-
-        <table class="w-full text-left">
-
-            <thead class="border-b border-slate-700 text-gray-400 text-sm">
-                <tr>
-                    <th class="p-3">Código</th>
-                    <th class="p-3">Proprietário</th>
-                    <th class="p-3">Localidade</th>
-                    <th class="p-3">Valor</th>
-                    <th class="p-3">Área (m²)</th>
-                    <th class="p-3">Construção</th>
-                </tr>
-            </thead>
-
-            <tbody id="imoveis" class="divide-y divide-slate-700">
-<!-- 
-                <tr class="hover:bg-slate-700 transition">
-                    <td class="p-3">1</td>
-                    <td class="p-3">João Silva</td>
-                    <td class="p-3">Blumenau</td>
-                    <td class="p-3 text-green-400">R$ 50000.00</td>
-                    <td class="p-3">120</td>
-                    <td class="p-3">
-                        <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs">
-                        Sim
-                        </span> -->
-                    </td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-        </div>
-
-    </div>
-
-</div>
-
-<script src="./assets/js/cadastro-imoveis.js"></script>
+    <script src="./assets/js/cadastro-imoveis.js"></script>
 
 </body>
+
 </html>
