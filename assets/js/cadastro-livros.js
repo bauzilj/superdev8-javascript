@@ -6,7 +6,7 @@ botaoSalvar.addEventListener("click", salvar);
 
 const campoTituloLivro = document.getElementById("titulo-livro");
 const campoAutor = document.getElementById("autor");
-const CampoQuantidadePaginas = document.getElementById("quantidadePaginas");
+const campoQuantidadePaginas = document.getElementById("quantidadePaginas");
 const campoAnoDePublicacao = document.getElementById("anoDePublicacao");
 
 let mensagemAlert = document.getElementById("alert");
@@ -17,12 +17,12 @@ let tabela = document.getElementById("livros");
 function salvar() {
     let tituloLivro = campoTituloLivro.value.trim();
     let autor = campoAutor.value.trim();
-    let quantidadePaginas = parseInt(CampoQuantidadePaginas.value.trim());
+    let quantidadePaginas = parseInt(campoQuantidadePaginas.value.trim());
     let anoDePublicacao = parseInt(campoAnoDePublicacao.value.trim());
 
     let classificacao = anoDePublicacao <= 2010 ? "Livro antigo" : "Livro recente";
 
-    if(!tituloLivro || !autor || isNaN(quantidadePaginas) || isNaN(anoDePublicacao)){
+    if (!tituloLivro || !autor || isNaN(quantidadePaginas) || isNaN(anoDePublicacao)) {
         mensagemAlert.innerHTML = "Preenche todos os campos com cuidado!!";
         mensagemAlert.style.color = "#ff0000";
         return;
@@ -42,8 +42,10 @@ function salvar() {
     }
     campoTituloLivro.value = "";
     campoAutor.value = "";
-    CampoQuantidadePaginas.value = "";
+    campoQuantidadePaginas.value = "";
     campoAnoDePublicacao.value = "";
+
+    mensagemAlert.innerHTML = "";
 
     campoTituloLivro.focus();
 }
@@ -61,23 +63,31 @@ function criarLinhas(tituloLivro, autor, quantidadePaginas, anoDePublicacao, cla
             <button onclick="excluirLivros(this)">Excluir</button>
         </td> 
                 </tr>`;
-               
+
 
     tabela.insertAdjacentHTML("beforeend", linha);
 }
 
-function editarLivros(botao){
+function editarLivros(botao) {
     let linha = botao.parentNode.parentNode;
 
     campoTituloLivro.value = linha.children[1].innerText;
     campoAutor.value = linha.children[2].innerText;
-    CampoQuantidadePaginas.value = linha.children[3].innerText;
+    campoQuantidadePaginas.value = linha.children[3].innerText;
     campoAnoDePublicacao.value = linha.children[4].innerText;
 
     editorLinha = linha;
 }
 
-function excluirLivros(botao){
+function excluirLivros(botao) {
     let linha = botao.parentNode.parentNode;
     linha.remove();
 }
+
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        salvar();
+    }
+});

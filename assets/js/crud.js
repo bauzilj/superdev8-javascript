@@ -28,6 +28,8 @@ function eventoEnterNome(event){
 
 
 
+
+
 // Função responsável por cadastrar (adicionar) um jogo na lista
 function cadastrarJogo(){
 
