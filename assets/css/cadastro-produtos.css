@@ -1,0 +1,102 @@
+    body {
+            background-color: #f3f4f6;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px;
+        }
+
+        .container {
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            padding: 24px;
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 16px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #4b5563;
+            margin-bottom: 5px;
+        }
+
+        input {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+        }
+
+        button {
+            width: 100%;
+            background-color: #2563eb;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .table-container {
+            width: 100%;
+            max-width: 900px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: #e5e7eb;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        tbody tr {
+            border-top: 1px solid #ddd;
+        }
+
+       #mensagem-alert{
+        text-align: center;
+        font-style: italic;
+        color: #ff0000;
+        margin-bottom: 10px;
+       }

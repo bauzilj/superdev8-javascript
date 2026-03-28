@@ -1,5 +1,6 @@
 let proximoId = 1;
 let valorTotal = 0;
+let linhaEditando = "";
 
 const botaoAddicionar = document.getElementById("botao-add");
 botaoAddicionar.addEventListener("click", addicionar);
@@ -9,71 +10,52 @@ const campoCategoria = document.getElementById("categoria");
 const campoPreco = document.getElementById("preco");
 const campoQtdEmEstoque = document.getElementById("qtdEmEstoque");
 
-const labelNome = document.getElementById("label-produto");
-const labelCategoria = document.getElementById("label-categoria");
-const labelPreco = document.getElementById("label-preco");
-const labelQuantidade = document.getElementById("label-quantidade");
+
+const tabela = document.getElementById("produtos");
+
+let mensagemAlert = document.getElementById("mensagem-alert");
 
 function addicionar() {
-    nomeProduto = campoNomeProduto.value.trim();
-    categoria = campoCategoria.value.trim();
-    preco = parseFloat(campoPreco.value.trim());
-    qtdEmEstoque = parseInt(campoQtdEmEstoque.value.trim());
+    let nomeProduto = campoNomeProduto.value.trim();
+    let categoria = campoCategoria.value.trim();
+    let preco = parseFloat(campoPreco.value);
+    let qtdEmEstoque = parseInt(campoQtdEmEstoque.value);
 
-    if (nomeProduto.length < 3) {
-        labelNome.innerHTML = "O nome deve ter mais de 3 caracteres.";
-        labelNome.style.color = "#ff0000"
-        return;
-    } else if (nomeProduto.length > 25) {
-        labelNome.innerHTML = "O nome deve ter no máximo 25 caracteres.";
-        labelNome.style.color = "#ff0000";
+    if (!nomeProduto || !categoria || isNaN(preco) || isNaN(qtdEmEstoque)) {
+        mensagemAlert.innerHTML = "Preencha todos os campos corretamente!";
         return;
     }
 
-    if (categoria.length < 3) {
-        labelCategoria.innerHTML = "A categoria deve ter mais de 3 caracteres.";
-        labelCategoria.style.color = "#ff0000"
-        return;
-    } else if (categoria.length > 25) {
-        labelCategoria.innerHTML = "A categoria deve ter no máximo 25 caracteres.";
-        labelCategoria.style.color = "#ff0000";
+    if (preco <= 0 || qtdEmEstoque <= 0) {
+        mensagemAlert.innerHTML = "Valores inválidos!";
         return;
     }
 
-    if (preco === 0 || Number.isNaN(preco)) {
-        labelPreco.innerHTML = "Vc Precisa digitar um valor superior a zero";
-        labelPreco.style.color = "#ff0000";
-        return;
-    } else if (preco < 0) {
-        labelPreco.innerHTML = "O preco deve ser numero positivo";
-        labelPreco.style.color = "#ff0000";
-        return;
-    }
+    valorTotal = preco * qtdEmEstoque;
 
-    if (qtdEmEstoque < 0) {
-        labelQuantidade.innerHTML = "A quantidade deve ser numero positivo."
-        labelQuantidade.style.color = "#ff0000";
-        return;
-    } else if (qtdEmEstoque === 0 || Number.isNaN(qtdEmEstoque)) {
-        labelQuantidade.innerHTML = "Vc precisa digite um valor superior a zero"
-        labelQuantidade.style.color = "#ff0000"
-        return;
-    }
+    if (linhaEditando) {
+        linhaEditando.children[1].innerText = nomeProduto;
+        linhaEditando.children[2].innerText = categoria;
+        linhaEditando.children[3].innerText = "R$" + preco.toFixed(2);
+        linhaEditando.children[4].innerText = qtdEmEstoque;
+        linhaEditando.children[5].innerText = "R$" + valorTotal.toFixed(2);
 
+        linhaEditando = "";
+    } else {
+        criarLinha(nomeProduto, categoria, preco, qtdEmEstoque, valorTotal, proximoId);
+        proximoId = proximoId + 1;
+
+    }
     campoNomeProduto.value = "";
-    campoNomeProduto.focus();
     campoCategoria.value = "";
     campoPreco.value = "";
     campoQtdEmEstoque.value = "";
 
-    valorTotal = preco * qtdEmEstoque;
-
-    criarLinha(nomeProduto, categoria, preco, qtdEmEstoque, proximoId);
-    proximoId = proximoId + 1;
-
+    campoNomeProduto.focus();
+    mensagemAlert.innerHTML = "";
 }
 
-function criarLinha(nomeProduto, categoria, preco, qtdEmEstoque, proximoId) {
+function criarLinha(nomeProduto, categoria, preco, qtdEmEstoque, valorTotal, proximoId) {
     const linha = `<tr class="hover:bg-slate-700 transition">
                     <td class="p-3">${proximoId}</td>
                     <td class="p-3">${nomeProduto}</td>
@@ -85,8 +67,41 @@ function criarLinha(nomeProduto, categoria, preco, qtdEmEstoque, proximoId) {
                         ${valorTotal.toFixed(2)}
                         </span>
                     </td>
+                     <td>
+                        <button class= "btn-editar">Editar</button>
+                        <button class= "btn-excluir">Excluir</button>
+                    </td>
                 </tr>`;
 
-    const tabela = document.getElementById("produtos");
-    tabela.innerHTML = tabela.innerHTML + linha;
+
+    //tabela.innerHTML = tabela.innerHTML + linha;
+    tabela.insertAdjacentHTML("beforeend", linha);
+}
+
+tabela.addEventListener("click", function (event) {
+    const botao = event.target;
+
+    if (botao.classList.contains("btn-editar")) {
+        editar(botao);
+    }
+
+    if (botao.classList.contains("btn-excluir")) {
+        excluir(botao);
+    }
+});
+
+function excluir(botao) {
+    let linha = botao.parentNode.parentNode;
+    linha.remove();
+}
+
+function editar(botao) {
+    let linha = botao.parentNode.parentNode;
+
+    campoNomeProduto.value = linha.children[1].innerText;
+    campoCategoria.value = linha.children[2].innerText;
+    campoPreco.value = linha.children[3].innerText.replace("R$", "").trim();
+    campoQtdEmEstoque.value = linha.children[4].innerText;
+
+    linhaEditando = linha;
 }
